@@ -43,8 +43,8 @@ public class MovieController {
 		
 		Long count=  dao.count();
 		
-		Random r = new Random();
-		int res=r.nextInt(count.intValue())+1; 
+		Random rand = new Random();
+		int res=rand.nextInt(count.intValue())+1; 
 		// nextInt returns a value between 0 (inclusive) and count (exclusive). 
 		// so, adding 1 to get a value between 1 to count.
 		
@@ -54,7 +54,7 @@ public class MovieController {
 		else
 		{
 			List<Movie> movie=dao.findByCategoryContainsIgnoreCase(category);
-			res = r.nextInt(movie.size());
+			res = rand.nextInt(movie.size());
 			return movie.get(res);
 		}
 	}
